@@ -1,0 +1,120 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block content %}
+<br><br><br>
+<link rel ="stylesheet" href="{% static 'css/policehome.css' %}">
+
+<!--Registration card for the Police home page-->
+<div class="register-card">
+<div class="card w-50 m-auto mt-3">
+    <div class="card-header border-0">
+      Police station: {{request.user}}
+    </div>
+    <div class="card-body">
+      <h1 class="card-title">Welcome to FindX Police Dashboard !</h5>
+      <p class="card-text">Click on the below button to register a missing complain..</p>
+      <a href="#" class="btn btn-primary" onclick="location.href='register'">Register</a>
+    </div>
+  </div>
+</div>
+<!--End of Registration card-->
+
+<!--List of active missing cases-->
+  <div class="missing-cards">
+  <h1 class="font-weight-bold mb-2">Active Missing cases </h2>
+  <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.<span class="missing-cards-view-more"><a href="">View more</a></span></p>
+
+  <div class="row row-cols-6">
+    {% for case in allCases  %}
+    <div class="col col-active-cases">
+        <!-- Card-->
+        <div class="card shadow-sm border-0 rounded card-active-cases h-60">
+        <div class="card-body card-dashboard"><img src="{{case.image.url}}" alt="" class="w-100 card-img-top">
+                  <div class="p-0 card-dashboard-content">
+                      <h6 class="mb-1 mt-2">{{case.name}}</h5>
+                      <p class="small text-muted mb-0">Age/Gender: {{case.age}}/{{case.gender}}</p>
+                      <p class="small text-muted mb-0">Police Station: {{case.policeStation}}</p>
+                     <button type="button" class="btn btn-primary btn-sm mt-2" onclick="location.href='dashDetail/{{case.slug}}'"> View report
+                      </button>
+                     
+                  </div>
+              </div>
+    </div>
+    </div>
+    {% endfor %}
+  
+    </div>
+  </div>
+</div>
+<!--End of Missing cards-->
+
+<!--Pending notifications-->
+<div class="notification-container">
+    <div class="image">
+        <img src="\static\img\notification-image.png" class="home-notification-image">
+    </div>
+    <div class="notification-text">
+      <h1>Catch up with the Lastest Notifications..</h1>
+      <div class="notification-card">
+        <div class="card">
+            <div class="card-header border-0">
+              Pending notifications for {{request.user}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Check out the lastest notifications</h5>
+              <p class="card-text card-notification">Click on the below button to check out the notifications regarding the missing cases</p>
+              <button type="button" class="btn btn-primary">
+                Notifications <span class="badge badge-light" style="background-color: red;">4</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<!--End of Pending notifications-->
+
+
+<!--Statistics-->
+<div class="statistics-card">
+   
+    <div class="image">
+        <img src="\static\img\statistics-image.png" class="home-statistics-image">
+    </div>
+    <div class="stats-heading">
+        <h1>Live statistics..</h1>
+    </div>
+    <div class="stats-container">
+       
+        <div class="row stats-row">
+          <div class="col">
+            <div class="stats-number">
+                123
+            </div>
+            <div class="stats-desc">
+                Registered Cases
+            </div>
+          </div>
+          <div class="col">
+            <div class="stats-number">
+                90
+            </div>
+            <div class="stats-desc">
+                Total Active Cases
+            </div>
+          </div>
+          <div class="col">
+            <div class="stats-number">
+                73%
+            </div>
+            <div class="stats-desc">
+                
+                        Percentage
+                
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<!--End of statistics-->
+
+{% endblock content %}

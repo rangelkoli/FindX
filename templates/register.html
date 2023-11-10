@@ -1,0 +1,343 @@
+{% extends 'policebase.html' %}
+{% load static %}
+
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/register.css' %}">
+
+<div class="wrapper">
+
+{% comment %} <center><h2 style="margin:20px;">Registeration</h2></center>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %} {% endcomment %}
+ 
+    {% comment %} <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Name<span>&#65121;</span></label>
+        <input type="name" class="form-control" id="inputEmail4" placeholder="Name" name="name" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Age<span>&#65121;</span></label>
+        <input type="age" class="form-control" id="inputPassword4" placeholder="Age" name="age" required>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Aadhaar Number<span>&#65121;</span></label>
+          <input type="Number" class="form-control" id="inputEmail4" placeholder="Aadhar Number" name="govID" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Height</label>
+          <input type="height" class="form-control" id="inputPassword4" placeholder="Height" name="height">
+        </div>
+      </div>
+    <div class="form-group">
+      <label for="inputAddress">Address<span>&#65121;</span></label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address" required>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City<span>&#65121;</span></label>
+        <input type="text" class="form-control" id="inputCity" placeholder="City" name="city" required>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State<span>&#65121;</span></label>
+        <input type="state" class="form-control" id="inputState" placeholder="State" name="state" required>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip<span>&#65121;</span></label>
+        <input type="text" class="form-control" id="inputZip" placeholder="Zip Code" name="zip" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Police Station<span>&#65121;</span></label>
+      <select class="form-control" id="exampleFormControlSelect1" name="policeStation" required>
+        <option>Goregaon</option>
+        <option>Malad</option>
+        <option>Kandivali</option>
+        <option>Borivali</option>
+      </select>
+    </div> {% endcomment %}
+    {% comment %} <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+  <hr>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Gender<span>&#65121;</span></label>
+    <select class="form-control" id="exampleFormControlSelect1" name="gender" required>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+  </div>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Hair color" name="hairColor">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Haircut Type" name="hairType">
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Skin Tone" name="skinTone">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Eye Color" name="eyeColor">
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Clothes" name="clothes">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Physique" name="physique">
+      </div>
+    </div><br><hr>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Permanent Marks(Tattoo, Birthmark, Scar, Mole etc)</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="permanent"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Family Dispute</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="dispute"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Reward Money</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Reward Money" name="reward">
+    </div><hr>
+    <label>Probable Suspect</label><hr>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Name</label>
+        <input type="name" class="form-control" id="inputEmail4" placeholder="Name" name="nameSus">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Age</label>
+        <input type="age" class="form-control" id="inputPassword4" placeholder="Age" name="ageSus">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Relation</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="relation"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Reasons</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="reason"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Small file input example</label>
+      <input class="form-control form-control-sm" id="formFileSm" type="file" name= "image">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div> {% endcomment %}
+
+  <section>   
+    <div class="reg_form" style="margin-top:100px">
+      <div class="reg_form_wrapper">
+        <h1>Registration Form</h1> 
+        <br>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>
+                Personal Information
+              </h3>
+              {% comment %} <div class="row">
+                <div class="col">
+                  <label class="form-check-label" for="inlineRadio1">First Name:</label>
+
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                  <label class="form-check-label" for="inlineRadio1">Last Name:</label>
+
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div> {% endcomment %}
+              <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Name<span>&#65121;</span>:</label>
+                <input type="text" class="form-control" placeholder="Full Name" name="name" required>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label class="form-check-label" for="inlineRadio1">Aadhar Number<span>&#65121;</span>:</label>
+
+                  <input type="text" class="form-control" placeholder="Aadhar Number" name="govID" required>
+                </div>
+                <div class="col">
+                  <label class="form-check-label" for="inlineRadio1">Height:</label>
+                  <input type="text" class="form-control" placeholder="Height" name="height">
+                </div>
+              </div>
+           
+              <div class="row">
+                <div class="col">
+                  {% comment %} <label class="form-check-label" for="i0nlineRadio1">Date of Birth<span>&#65121;</span>:</label>
+                  <input type="date" id="birthday" style="width: 100%; height: 35px; border-radius: 10px; text-align:center" name="dob" required> {% endcomment %}
+                  <label class="form-check-label" for="inlineRadio1">DOB<span>&#65121;</span>:</label>
+                  <input type="text" class="form-control" placeholder="dd-mm-yyyy"  id="age1"  name="dob" required>
+                </div>
+                <div class="col">
+                  <label class="form-check-label" for="inlineRadio1">Age<span>&#65121;</span>:</label>
+                  <input type="text" class="form-control" placeholder="Age"  id="age1"  name="age" required>
+
+                </div>
+              </div>
+               {% comment %} <div class="row" style="align-items: center; text-align: center;justify-content: center ">
+                <div class="col justify-contents-center">
+                  <label class="form-check-label" for="inlineRadio1">Photograph:</label>
+
+              <input type="file" id="myFile" name="filename">
+
+                </div>
+              </div> {% endcomment %}
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Gender<span>&#65121;</span>:<span>&#65121;</span></label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="gender" required>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+
+              <div class="form-group">
+                <label for="inputAddress">Address<span>&#65121;</span>:</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address" required >
+              </div>
+              <div class="row">
+                <div class="form-group col-md-4">
+                  <label for="inputCity">City<span>&#65121;</span>:</label>
+                  <input type="text" class="form-control" id="inputCity" name="city" required> 
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="inputState">State<span>&#65121;</span>:</label>
+                  <select id="inputState" class="form-control"  name="state" required>
+                    <option selected>Choose...</option>
+                    <option>Maharashtra</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="inputZip">Zip<span>&#65121;</span>:</label>
+                  <input type="text" class="form-control" id="inputZip" name="zip" required>
+                </div>
+                
+                <div class="col">
+                  <label class="form-check-label imageDoc" for="inlineRadio1">Document</label>
+                  <input type="file" id="myFile" name="imageDoc">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" id="addinfo" style="justify-content:space-around;">
+              <h3>Additional Information</h3>
+              <div class="form-group">
+                <label for="inputAddress2">Last Known Address:</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name="lastLoc">
+              </div>   
+                 <div class="row">
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Hair Colour:</label>
+                  <input type="text" class="form-control" placeholder="Hair Colour" name="hairColor">
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Haircut Type:</label>
+
+                  <input type="text" class="form-control" placeholder="Haircut Type" name="hairType">
+                </div>
+              </div>
+                           <div class="row">
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Clothes:</label>
+
+                  <input type="text" class="form-control" placeholder="Clothes" name="clothes">
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Eye Colour:</label>
+
+                  <input type="text" class="form-control" placeholder="Eye Colour" name="eyeColor">
+                </div>
+              </div> 
+                 <div class="row">
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Skin Tone:</label>
+
+                  <input type="text" class="form-control" placeholder="Skin Tone" name="skinTone">
+                </div>
+                <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Physique:</label>
+                  <input type="text" class="form-control" placeholder="Physique" name="physique">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Police Station<span>&#65121;</span>:</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="policeStation" required>
+                  <option>Goregaon</option>
+                  <option>Malad</option>
+                  <option>Kandivali</option>
+                  <option>Borivali</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress2">Reward Money:</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Reward Money" name="reward">
+              </div>  
+            </div>
+          </div>
+          <h3>Extra Information</h3>
+           <div class="form-group">
+            <label for="exampleFormControlTextarea1">Permanent Marks:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="permanent"></textarea>
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Family Disputes:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="dispute"></textarea>
+          </div>
+          <div class="form-group">
+            <br>
+            <h3>Probable Suspects</h3>
+            <div class="row">
+              <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Name:</label>
+
+                <input type="text" class="form-control" placeholder="Name" name="nameSus">
+              </div>
+              <div class="col">
+                <label class="form-check-label" for="inlineRadio1">Age:</label>
+
+                <input type="text" class="form-control" placeholder="Age" name="ageSus">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Relation:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="relation"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Reasons:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="reason"></textarea>
+          </div>
+          <div class="row">
+            <div class="col">
+            <label class="form-check-label" for="inlineRadio1">Photograph:</label>
+            <input type="file" id="myFile" name="image">
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+          <br>
+        </div>
+        
+      </div>
+    </section>
+  </form>
+
+
+
+{% endblock content %}

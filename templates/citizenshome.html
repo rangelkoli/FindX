@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/citizenshome.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+<script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+  function loadGoogleTranslate()
+  {
+    new google.translate.TranslateElement("myid")
+  }
+
+</script>
+<br><br><br>
+<div class="scan-header">
+    <center><img src="\static\img\header-home.png" class="home-header-image"></center>
+    <div class="scan-heading">Welcome to FindX</div>
+    <div class="scan-details">Upload Photos to Verify Whether the Person is Missing</div>
+</div>
+
+<div class="scan-form">
+    <button class="btn btn-primary btn-sm btn-scan" type="submit" onclick="location.href='/scan'"><i class="bi bi-search"></i>Scan</button>
+</div>
+
+<div class="home-missing-cards">
+  {% for cases in allCases %}
+    <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{cases.image.url}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <p class="card-title">{{cases.name}}</p>
+              <p class="card-text">Location: {{cases.city}}</p>
+              <p class="card-text">Age: {{cases.age}}</p>
+              <p class="card-text">Gender: {{cases.gender}}</p>
+            <p class="card-text">Last Known Location: {{cases.lastLoc}}</p></div></div>
+           <button class="btn btn-primary btn-sm btn-card-scan" type="submit" onclick="location.href='/scan'">Scan</button>
+              
+            
+          
+        </div>
+      </div>
+      {% endfor %}
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1670110531916-41045e83cb0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-title">Deep Koti</p>
+              <p class="card-text">Location: XXXXXXX</p>
+              <p class="card-text">Age: XXXXXXX</p>
+              <p class="card-text">Gender: XXXXXXX</p>
+            <p class="card-text">Last Known Location: XXXXXXX</p></div></div>
+            <button class="btn btn-primary btn-sm btn-card-scan" type="submit" onclick="location.href='/scan'">Scan</button>
+            
+          
+        </div>
+      </div>
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1671527905239-ec663833d886?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=679&q=80" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <p class="card-title">Ragnel Koli</p>
+              <p class="card-text">Location: XXXXXXX</p>
+              <p class="card-text">Age: XXXXXXX</p>
+              <p class="card-text">Gender: XXXXXXX</p>
+            <p class="card-text">Last Known Location: XXXXXXX</p></div></div>
+            <button class="btn btn-primary btn-sm btn-card-scan" type="submit" onclick="location.href='/scan'">Scan</button>
+            
+          
+        </div>
+      </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+{% endblock content %}

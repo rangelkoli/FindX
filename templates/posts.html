@@ -1,0 +1,48 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block blogsactive %} {% endblock blogsactive %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/posts.css' %}">
+<br><br><br>
+<center>
+<form action="/police/posts/{{receiver}}" method="POST">
+{% csrf_token %}
+<label for="freeform" style="font-size: 1.5rem;">Add alerts from your station:</label>
+<br>
+
+<textarea id="freeform" name="post-text" rows="4" cols="50" style="font-size: 1.2rem; border-radius: 1rem; padding: 1rem;">
+</textarea>
+
+<br><br>
+<button type="submit" class="btn btn-primary" style="font-size: 1.2rem;">Submit</button>
+</form>
+<br><br><br>
+</center>
+{% for posts in allPosts %}
+<div class="card mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4" style="background-color: #106cfc; border-radius: 1rem 0rem 0rem 0rem;">
+        <p style="font-size: 1.5rem; margin-top: 0.7rem; margin-left: 1.5rem; font-weight: bold;">{{posts.senderPolice}}</p>  
+      </div>
+      <div class="col-md-8" style="text-align: right; background-color: #106cfc; border-radius: 0rem 1rem 0rem 0rem;">
+        <p>Govt. ID: XXXX XXXX XXXX</p>
+</div>
+  
+<div class="card-body">
+  <p style="text-align: justify; color: #000;">{{posts.message}}</p>
+</div></div></div>
+{% endfor %}
+<div class="card mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4" style="background-color: #106cfc; border-radius: 1rem 0rem 0rem 0rem;">
+        <p style="font-size: 1.5rem; margin-top: 0.7rem; margin-left: 1.5rem; font-weight: bold;">Charkop</p>  
+      </div>
+      <div class="col-md-8" style="text-align: right; background-color: #106cfc; border-radius: 0rem 1rem 0rem 0rem;">
+        <p>Govt. ID: XXXX XXXX XXXX</p>
+</div>
+  
+<div class="card-body">
+  <p style="text-align: justify; color: #000;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+{% endblock %}

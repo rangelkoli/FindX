@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Example 1</title>
+        <link rel="stylesheet" href="style.css" media="all"/>
+        <style type="text/css">
+            * {
+                box-sizing: border-box;
+            }
+
+            .row {
+                margin-left: -5px;
+                margin-right: -5px;
+            }
+
+            .column {
+                float: left;
+                width: 50%;
+                padding: 5px;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+            }
+
+            th,
+            td {
+                font-size: 16px;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #FFF;
+            }
+            h1 {
+                background-color: #ADD8E6;
+                font-size: 22px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+      
+        <h1>Personal Information</h1>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{age}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>9876789876</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{address}}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{city}}</td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td>{{zip}}</td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>{{state}}</td>
+            </tr>
+            <tr>
+                <td>Aadhar</td>
+                <td>{{aadhar}}</td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td>{{height}}</td>
+            </tr>
+
+        </table>
+        <h1>Additional Information</h1>
+        <table>
+            <tr>
+                <td>Last Known Address</td>
+                <td>{{address}}</td>
+            </tr>
+            <tr>
+                <td>Haircut Type and Colour
+                </td>
+                <td>{{hairType}} {{hairColor}}</td>
+            </tr>
+            <tr>
+                <td>Skin Tone and Physique</td>
+                <td>{{skinTone}} {{physique}}</td>
+            </tr>
+            <tr>
+                <td>Reward Money</td>
+                <td>{{reward}}</td>
+            </tr>
+
+        </table>
+        <h1>Extra Information</h1>
+        <table>
+            <tr>
+                <td>Permanent Marks</td>
+                <td>{{permanent}}</td>
+            </tr>
+            <tr>
+                <td>Family Dispute</td>
+                <td>{{dispute}}</td>
+            </tr>
+        </table>
+        <h1>Contact US</h1>
+        <table>
+            <tr>
+                <td>Contact Number</td>
+                <td>9823432345</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/notification.css' %}">
+{% if notify_exists > 0 %}
+<div class="container notification-container">
+    <div class="row row-cols-3 notification-row">
+        {% for notification in notify %}
+      <div class="col notification-col">
+        <div class="notification-desc">
+            <div class="row g-0">
+                <div class="col-md-4 image-container">
+                  <img src="{{notification.image.url}}" class="img-fluid" style="height: 8vw; object-fit: cover;" alt="...">
+                </div>
+                <div class="col">
+                  
+                  <div class="card-body notification-body">
+                    <h6 class="card-title notification-title">Name: {{notification.case_name}}</h5>
+                    <div class="card-text notification-text"><span style="font-weight: 500;">Latitude: </span>{{notification.latitude}}</div>
+                    <div class="card-text notification-text"><span style="font-weight: 500;">Longitude: </span>{{notification.longitude}}</div>
+                  </div>
+                  <div class="container container-button">
+                    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='/police/dashDetail/{{notification.govid}}'">View</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="location.href='https://maps.google.com/?q={{notification.latitude}},{{notification.longitude}}'">View Location</button>
+                </div>
+                </div>
+              </div>
+           
+           
+        </div>
+      </div>
+      {% endfor %}
+     
+    </div>
+  </div>
+  {% else %}
+  <div class="no-notifications">
+    <center>
+    <div class="no-notifications-image">
+      <img src="\static\img\no-notifications.png" class="no-notification-image">
+    </div>
+  </center>
+    <div class="no-notifications-text text-center">
+      <p>Currently there are no active notifications!</p>
+    </div>
+  </div>
+  {% endif %}
+{% endblock content %}

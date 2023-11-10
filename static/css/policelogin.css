@@ -1,0 +1,105 @@
+.login-heading{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: -3.5rem;
+}
+.login-box {
+    width: 22rem;
+    text-align: center;
+    margin: auto;
+    margin-top: -1rem;
+    background-color: white;
+    padding: 2.5rem; 
+  
+}
+  
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.btn{
+    width: 100%;
+    font-size: 16px;
+}
+
+.forgot-password{
+    text-decoration: none;
+    text-align: center;
+    color: #273840;
+   
+}
+
+.username-message{
+    font-size: 0.8rem;
+    color: red;
+    margin-top: -0.9rem;
+}
+  
+.btn{
+    font-weight: 600;
+    border: none;
+}
+
+.login-header-image{
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+.forget-password{
+    padding-top: 5%;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .login-heading{
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 10rem;
+
+    }
+    .login-box {
+        width: 25rem;
+        text-align: center;
+        margin: auto;
+        margin-top: -1rem;
+        background-color: white;
+       
+      
+    }
+      
+    
+    .form-control {
+        margin-bottom: 20px;
+    }
+    
+    .btn{
+        width: 100%;
+        font-size: 18px;
+    }
+    
+    .forgot-password{
+        text-decoration: none;
+        text-align: center;  
+       
+    }
+    
+    .username-message{
+        font-size: 0.8rem;
+        color: red;
+        margin-top: -0.9rem;
+    }
+      
+    .btn{
+
+        font-weight: 600;
+        border: none;
+    }
+    
+
+
+
+
+
+}

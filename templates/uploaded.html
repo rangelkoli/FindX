@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<link rel ="stylesheet" href="{% static 'css/uploaded.css' %}">
+<div class="main-content">
+    <div class="main-content-header">
+        <h3>Image Uploaded Sucessfully!</h3>
+    </div>
+    <div class="main-content-desc">
+        <p>Are you sure you want to send the given image for furthur processing?</p>
+    </div>
+{% for x in img %}
+
+<div class="image-display">
+    <img src="{{x.photo.url}}" alt="" class="img">
+</div>
+{% endfor %}
+
+<div class="scan-button">
+    <form action="{% url 'scanimage' %}" method="POST">
+        {% csrf_token %}
+    <input type="hidden" id="myLat" name="latitude" value="">
+    <input type="hidden" id="myLon" name="longitude" value="">
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    <p id="location" type=""></p>
+</div>
+
+
+</div></center>
+<script>
+    //var x = document.getElementById("location");
+    window.onload = function getPreciseLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showExactPosition)
+        }else{
+            x.innerHTML = "GeoLocation is not supported"
+        }
+    }
+    function showExactPosition(position){
+        //x.innerHTML = "Latitude: "+position.coords.latitude+"<br>Longitude: "+position.coords.longitude;
+        
+        var  lat =position.coords.latitude;
+        document.getElementById("myLat").value = lat;
+        var longitude = position.coords.longitude;
+        document.getElementById("myLon").value = longitude;
+    }
+</script>
+{% endblock content %}

@@ -1,0 +1,18 @@
+.img{
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.btn{
+    margin-top: 1rem;
+}
+
+.main-content-header{
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.main-content-desc{
+    text-align: center;
+    font-size: 0.7rem;
+}

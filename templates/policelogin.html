@@ -1,0 +1,27 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block content %}
+
+<link rel ="stylesheet" href="{% static 'css/policelogin.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+<br><br><br><br><br>
+<div class="login">
+<div class="login-heading">
+    FindX Police Login
+</div>
+<div class="well login-box center-block">
+    <form name="login" method = "POST">
+      {% csrf_token %}
+      <input type="text" class="form-control" placeholder="Username" name="username" />
+
+      <input type="password" class="form-control" id="pass" placeholder="Password" name="password" />
+      
+      <button class="btn btn-primary" type="submit">Login</button>
+        <br>
+      <a href="" class="forgot-password">Forgot password?</a>
+  </div>
+  </form>
+  </div>
+
+{% endblock content %}

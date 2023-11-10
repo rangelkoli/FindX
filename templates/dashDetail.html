@@ -1,0 +1,419 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block blogsactive %} {% endblock blogsactive %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/dashdetail.css' %}">
+<link rel ="stylesheet" href="{% static 'css/aos.css' %}">
+<link rel ="stylesheet" href="{% static 'css/all.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" media="print" onload="this.media='all'"/>
+<noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;family=Roboto:wght@300;400;500;700&amp;display=swap"/>
+</noscript>
+<link href="css/font-awesome/css/all.min.css?ver=1.2.0" rel="stylesheet">
+<link href="css/aos.css?ver=1.2.0" rel="stylesheet">
+<link href="css/main.css?ver=1.2.0" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.4/aos.css">
+<noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+</noscript>
+<br>
+<br>
+<br>
+<br>
+   
+  <!--   <div class="wrapper">
+          <section>   
+            <div class="reg_form" style="margin-top:100px;">
+              <div class="reg_form_wrapper">
+                <h1>Report</h1> 
+                <form method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h2>
+                        Personal Information
+                      </h2>
+                      {% comment %} <div class="row">
+                        <div class="col">
+                          <label class="form-check-label" for="inlineRadio1">First Name:</label>
+        
+                          <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col">
+                          <label class="form-check-label" for="inlineRadio1">Last Name:</label>
+        
+                          <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                      </div> {% endcomment %}
+                      <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Name:</label>
+                        <label class="form-check-label" for="inlineRadio1" style="color:blue; font-weight: 500;" ></span>{{reg.name}}</label>
+                        {% comment %} <input type="text" class="form-control" placeholder="Full Name" name="name" required> {% endcomment %}
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Aadhar Number:</label>
+                          <label class="form-check-label" for="inlineRadio1" >{{reg.govID}}</label>
+        
+                         
+                        </div>
+                        <div class="col">
+                          <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Height:</label>
+                          <label class="form-check-label" for="inlineRadio1">{{reg.height}}</label>
+                          
+                        </div>
+                      </div>
+                   
+                      <div class="row">
+                        <div class="col">
+                          {% comment %} <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Date of Birth<span>&#65121;</span>:</label>
+                          <input type="date" id="birthday" style="width: 100%; height: 35px; border-radius: 10px; text-align:center" name="dob" required> {% endcomment %}
+                          <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">DOB:</label>
+                          <label class="form-check-label" for="inlineRadio1">{{reg.dob}}</label>
+                          
+                        </div>
+                        <div class="col">
+                          <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Age:</label>
+                          <label class="form-check-label" for="inlineRadio1" style="color:blue;">{{reg.age}}</label>
+                          
+        
+                        </div>
+                      </div>
+                       {% comment %} <div class="row" style="align-items: center; text-align: center;justify-content: center ">
+                        <div class="col justify-contents-center">
+                          <label class="form-check-label" for="inlineRadio1">Photograph:</label>
+        
+                      <input type="file" id="myFile" name="filename">
+        
+                        </div>
+                      </div> {% endcomment %}
+        
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1" style="font-weight: 500;">Gender:</label>
+                          <label for="exampleFormControlSelect1">{{reg.gender}}</label>
+                        </div>
+        
+                      <div class="form-group">
+                        <label for="inputAddress" style="font-weight: 500;">Address<span>&#65121;</span>:</label>
+                        <p>{{reg.address}}</p>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-4">
+                          <label for="inputCity" style="font-weight: 500;">City<span>&#65121;</span>:</label>
+                          <p>{{reg.city}}</p>
+                        </div>
+                        <div class="form-group col-md-5">
+                          <label for="inputState" style="font-weight: 500;">State<span>&#65121;</span>:</label>
+                          <p>{{reg.state}}</p>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputZip" style="font-weight: 500;">Zip<span>&#65121;</span>:</label>
+                          <p>{{reg.zip}}</p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="col-md-6" id="addinfo" style="justify-content:space-around;">
+                      <h2>Additional Information</h2>
+                      <div class="form-group">
+                        <label for="inputAddress2" style="font-weight: 500;">Last Known Address:</label>
+                        <p>{{reg.lastLoc}}</p>
+                      </div>   
+                         <div class="row">
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Hair Colour:</label>
+                        <p>{{reg.hairColor}}</p>
+                        </div>
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Haircut Type:</label>
+                        <p>{{reg.hairType}}</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Clothes:</label>
+                        <p>{{reg.clothes}}</p>
+                        
+                        </div>
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Eye Colour:</label>
+        
+                        <p>{{reg.eyeColor}}</p>
+                        </div>
+                      </div> 
+                         <div class="row">
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Skin Tone:</label>
+                          <p>{{reg.skinTone}}</p>
+                        </div>
+                        <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Physique:</label>
+                        <p>{{reg.physique}}</p>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1" style="font-weight: 500;">Police Station<span>&#65121;</span>:</label>
+                        <p>{{reg.policeStation}}</p>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress2" style="font-weight: 500;">Reward Money:</label>
+                        <p>{{reg.reward}}</p>
+                      </div>  
+                    </div>
+                  </div>
+                  <h2>Extra Information</h2>
+                   <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="font-weight: 500;">Permanent Marks:</label>
+                    <p>{{reg.permanent}}</p>
+                  </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="font-weight: 500;">Family Disputes:</label>
+                    <p>{{reg.dispute}}</p>
+                  </div>
+                  <div class="form-group">
+                    <h2>Probable Suspects</h2>
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Name:</label>
+        
+                        <p>{{reg.nameSus}}</p>
+                      </div>
+                      <div class="col">
+                        <label class="form-check-label" for="inlineRadio1" style="font-weight: 500;">Age:</label>
+        
+                        <p>{{reg.ageSus}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="font-weight: 500;">Relation:</label>
+                    <p>{{reg.relation}}</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1" style="font-weight: 500;">Reasons:</label>
+                    <p>{{reg.reason}}</p>
+                  </div>
+                 
+    
+                  </div>
+                  <br>
+                </div>
+                
+              </div>
+            </section>
+          </form>
+          {% if rootpolice == 1 %}
+          <div class="update-case-status">
+            <div class="update-case-header">
+              <p>Update Case Status</p>
+            </div>
+            <div class="update-case-content">
+              <form method="POST" action="">
+                {% csrf_token %}
+                <label for="status-label">Status:</label>
+                <select id="status" name="status">
+                  <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                 
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+                <button class="btn btn-primary btn-sm" type="submit"> <span style="font-weight: 600;" ><i class="fa-regular fa fa-check"></i></span></button>
+          
+          
+                
+              </form>
+            </div>
+
+          </div>
+          {% endif %} -->
+
+  <body id="top">
+    <div class="page-content">
+      <div class="container">
+        <div class="cover shadow-lg bg-white">
+          <div class="cover-bg p-3 p-lg-4 text-white">
+            <div class="row">
+              <div class="col-lg-4 col-md-5">
+             <img src="{{reg.image.url}}" class="report-img" style="width: 11rem;" alt=""/>
+              </div>
+              <div class="col-lg-8 col-md-7 report-header-text">
+                <!-- name -->
+                <h2 class="h1 mt-2">{{reg.name}}</h2>
+                <p>{{reg.policeStation}} Police Station</p>
+                <div class="d-print-none" ><a class="btn btn-success shadow-sm mt-1" href="/police/pdf/{{reg.slug}}" target="_blank">Download Report</a></div>
+                {% if rootpolice == 1 %}
+                <div class="case-update-div">
+                  <!-- name -->
+                  <h2 class="h1 mt-2">Case Status</h2>
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                  <div class="radio-inputs">
+                    {% if len_case_status == 6 %}
+                    <label class="radio">
+                      <input type="radio" name="radio" value ="Active" checked="">
+                      <span class="name">Active</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="radio" value="Inactive">
+                      <span class="name">Inactive</span>
+                    </label>
+                    {% else %}
+                    <label class="radio">
+                      <input type="radio" name="radio" value ="Active" >
+                      <span class="name">Active</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" name="radio" value="Inactive" checked="">
+                      <span class="name">Inactive</span>
+                    </label>
+                    {% endif %}
+                  </div>
+                  <button  class="btn btn-success shadow-sm mt-1" type="submit">Update Status</button>
+                </form>
+                </div>
+                {% else %}
+                <div class="send-message-root">
+                  <!-- name -->
+                  <h2 class="h1 mt-2">Contact</h2>
+                  <p>Ping message to {{reg.policeStation}}</p>
+                  <button  class="btn btn-success shadow-sm mt-1" type="submit" onclick="location.href='/police/posts/{{reg.policeStation}}'">Send Message</button>
+                {% endif %}
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="about-section pt-4 px-3 px-lg-4 mt-1">
+            <h2 class="h3 mb-3">Personal Information</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="col-md-10 offset-md-1">
+                  <div class="row mt-2">
+                    <div class="col-sm-4">
+                      <div class="pb-1">Age</div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="pb-1 text-secondary">{{reg.age}}</div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="pb-1">Phone</div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="pb-1 text-secondary">+0718-111-0011</div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="pb-1">Height</div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="pb-1 text-secondary">{{reg.height}}</div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="pb-1">Aadhar</div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="pb-1 text-secondary">{{reg.govID}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 offset-md-1">
+                <div class="row mt-2">
+                  <div class="col-sm-4">
+                    <div class="pb-1">Address</div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="pb-1 text-secondary">{{reg.address}}</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="pb-1">State</div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="pb-1 text-secondary">{{reg.state}}</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="pb-1">City</div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="pb-1 text-secondary">{{reg.city}}</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="pb-1">Zip</div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="pb-1 text-secondary">{{reg.zip}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="d-print-none"/>
+          
+          <div class="work-experience-section px-3 px-lg-4">
+            <h2 class="h3 mb-4">Additional Information</h2>
+            <div class="timeline">
+              <div class="timeline-card timeline-card-primary card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Last Known Address</div>
+                  <div>{{reg.address}}</div>
+                </div>
+              </div>
+              <div class="timeline-card timeline-card-primary card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Haircut Type and Colour</div>
+                  <div>{{reg.hairType}} {{reg.hairColor}}</div>
+                </div>
+              </div>
+              <div class="timeline-card timeline-card-primary card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Skin Tone and Physique</div>
+                  <div>{{reg.skinTone}} {{reg.physique}}</div>
+                </div>
+              </div>
+              <div class="timeline-card timeline-card-primary card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Reward Money</div>
+                  <div>{{reg.reward}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="d-print-none"/>
+          <div class="page-break"></div>
+          <div class="education-section px-3 px-lg-4 pb-4">
+            <h2 class="h3 mb-4">Extra Information</h2>
+            <div class="timeline">
+              <div class="timeline-card timeline-card-success card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Permanent Marks</div>
+                  <div>{{reg.permanent}}</div>
+                </div>
+              </div>
+              <div class="timeline-card timeline-card-success card shadow-sm">
+                <div class="card-body">
+                  <div class="h5 mb-1">Family Dispute </div>
+                  <div>{{reg.dispute}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="d-print-none"/>
+          
+        </div></div>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="js/aos.js"></script>
+            <script src="js/main.js"></script>
+          </body>
+
+
+{% endblock content %}

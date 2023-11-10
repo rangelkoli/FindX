@@ -1,0 +1,210 @@
+.scan-heading{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: -3rem;
+}
+
+.scan-details{
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.scan-form{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.btn-scan{
+    width: 50%;
+    font-size: 1.2rem;
+}
+
+.home-header-image{
+    width: 90%;
+    margin-top: -3rem;
+}
+
+.home-missing-cards{
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    padding: -4rem;
+  
+}
+
+.card{
+    border-radius: 1rem;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 30vh;
+  
+    margin-bottom: 4rem;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.card-title{
+    margin-top: -5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card-text{
+    margin-bottom: -0.3rem;
+    font-size: 0.8rem;
+}
+
+.btn-card-scan{
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+
+
+
+@media only screen and (min-width: 426px) and (max-width: 767px) {
+
+    .card{
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .img-fluid{
+        width: 96%;
+        height: 70%;
+        margin-left: 2%;
+    }
+    
+    .btn-scan {
+        font-size: 200%;
+        padding: 0% 5% 0% 5%;
+        width: 40%;
+    }
+
+    .btn-card-scan{
+        margin-top: 0.6rem;
+        width: 100%;
+        font-size: 150%;
+    }
+    .card-title{
+        font-size: 180%;
+        margin-top: -8rem;
+    }
+    }
+
+@media only screen and (min-width: 768px) and (max-width:1023px){
+    
+    .home-header-image{
+        width: 40%; 
+    }
+    
+    .col-md-4{
+        height: 15rem;
+    }
+    .scan-heading{
+        text-align: center;
+        font-size: 200%;
+        margin-top: -3rem;
+    }
+    .btn-scan {
+        margin-bottom: 2rem;
+        width: 25%;
+        padding: 1rem 0rem 1rem 0rem;
+        border-radius: .7rem;
+    }
+
+    .img-fluid{
+        width: 100%;
+        height: 95%;
+        margin-left: 3%;
+        margin-top: 3%;
+        border-radius: 1rem 1rem 1rem 1rem !important;
+    }
+
+    .card{
+        width: 90%;
+        height: fixed;
+    }
+
+    .card-text{
+        font-size: 150%;
+    }
+    .card-title{
+        font-size: 2rem;
+        text-align: left;
+    }
+    .card-body{
+        margin-top: 6rem;
+        margin-left: 1rem;
+    }
+
+    .btn-card-scan{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 1.5rem;
+
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .home-header-image{
+        width: 50%;
+        float: left; 
+        margin-top: -18%;
+        
+    }
+    
+    .scan-heading{
+        text-align: center;
+        font-size: 250%;
+        margin-top: 12%;
+        margin-right: 2%;
+    }
+    .scan-details{
+        font-size: 120%;
+        margin-right: 2%;
+    }
+    .btn-scan {
+        font-size: 150%;
+        margin-bottom: 2rem;
+        width: 15%;
+        padding: 1rem 0rem 1rem 0rem;
+        border-radius: .7rem;
+    }
+
+    .card{
+        width: 55%;
+        margin-left: 20%;
+    }
+    .card-body{
+        margin-top: 6rem;
+        margin-left: 0rem;
+    }
+    .card-text{
+        font-size: 150%;
+    }
+    .card-title{
+        font-size: 2rem;
+        text-align: left;
+    }
+    .col-md-4{
+        height: 15rem;
+    }
+    .img-fluid{
+        width: 85%;
+        height: 85%;
+        margin-left: 3%;
+        margin-top: 3%;
+        border-radius: 1rem 1rem 1rem 1rem !important;
+    }
+    .btn-card-scan{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 1.5rem;
+        margin-top: -1.5rem;
+    }
+
+}

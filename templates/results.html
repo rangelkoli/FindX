@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/result.css' %}">
+<div class="results">
+    <div class="results-image">
+        <center>
+        <img src="\static\img\results-header.png" class="home-header-image">
+    </center>
+    </div>
+    
+    <div class="results-title">
+        Thank you for using FindX
+        <div class="desc-subtitle">Your dedication and commitment to making a positive difference in the world is truly inspiring and heartwarming. Thank you from the bottom of our hearts for being a part of this important mission.</div>
+    </div>
+    {% if match == True %}
+
+    <div class="notification-text">
+        Notification sent!
+    </div>
+    <div class="results-desc">
+        <div class="desc-results"><span style="font-weight: 500;">Results: </span>Match Found {{identity}}</div>
+        <div class="desc-value"><span style="font-weight: 500;">Cosine value: </span>{{cosine}}</div>
+        <div class="desc-location"> <span style="font-weight: 500;">Nearest Police Station: </span>{{closestPoliceStation}}</div>
+    </div>
+    {% else %}
+    <div class="results-desc-notfound">
+        <div class="desc-results"><span style="font-weight: 500;">Results:</span>Match Not Found</div>
+        <div class="desc-results"><span style="font-weight: 500;">{{error_message}}</span></div>
+
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

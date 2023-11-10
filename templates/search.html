@@ -1,0 +1,133 @@
+{% extends 'policebase.html' %}
+{% load static %}
+{% block content %}
+<link rel ="stylesheet" href="{% static 'css/dashboard.css' %}">
+<br><br><br>
+    <div class="container-fluid">
+      <a class="navbar-brand dashboard-title" href="#"><span style="font-weight: 500; font-size: 1.5em;">Active Missing Cases</span></a>
+        <form class="d-flex search-bar" action="search" method="get">
+          <input class="form-control" type="search" placeholder="Enter the name.." name="query" id="search">
+          <button class="btn btn-outline-primary btn-search" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+ 
+
+  <div class="missing-cards">
+    <div class="row row-cols-6">
+    {% for case in allCases  %}
+      <div class="col col-active-cases">
+          <!-- Card-->
+          <div class="card shadow-sm border-0 rounded card-active-cases h-60">
+          
+              <div class="card-body card-dashboard"><img src="{{case.image.url}}" alt="" class="w-100 card-img-top">
+                  <div class="p-0 card-dashboard-content">
+                      <h6 class="mb-0">{{case.name}}</h5>
+                      <p class="small text-muted mb-0">Age/Gender: {{case.age}}/{{case.gender}}</p>
+                      <p class="small text-muted mb-0">Police Station: {{case.policeStation}}</p>
+                     <button type="button" class="btn btn-primary btn-sm mt-2" onclick="location.href='dashDetail/{{case.slug}}'"> View report
+                      </button>
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+      <!-- <div class="col col-active-cases">
+   
+        <div class="card shadow-sm border-0 rounded card-active-cases">
+            <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+                <div class="p-4">
+                    <h6 class="mb-0">Mark Rockwell</h5>
+                    <p class="small text-muted">CEO - Consultant</p>
+                    <button type="button" class="btn btn-primary">View Report</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-active-cases">
+       
+        <div class="card shadow-sm border-0 rounded card-active-cases">
+            <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+                <div class="p-4">
+                    <h6 class="mb-0">Mark Rockwell</h5>
+                    <p class="small text-muted">CEO - Consultant</p>
+                    <button type="button" class="btn btn-primary">View Report</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+      
+      
+
+        <div class="col col-active-cases">
+          
+          <div class="card shadow-sm border-0 rounded card-active-cases">
+              <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+                  <div class="p-4">
+                      <h6 class="mb-0">Mark Rockwell</h5>
+                      <p class="small text-muted">CEO - Consultant</p>
+                      <button type="button" class="btn btn-primary">View Report</button>
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+        <div class="col col-active-cases">
+            
+            <div class="card shadow-sm border-0 rounded card-active-cases">
+                <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-3_ybnq8v.jpg" alt="" class="w-100 card-img-top">
+                    <div class="p-4">
+                        <h6 class="mb-0">Mark Rockwell</h5>
+                        <p class="small text-muted">CEO - Consultant</p>
+                        <button type="button" class="btn btn-primary">View Report</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col col-active-cases">
+           
+            <div class="card shadow-sm border-0 rounded card-active-cases">
+                <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799924/profile-4_s3fort.jpg" alt="" class="w-100 card-img-top">
+                    <div class="p-4">
+                        <h6 class="mb-0">Mark Rockwell</h5>
+                        <p class="small text-muted">CEO - Consultant</p>
+                        <button type="button" class="btn btn-primary">View Report</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col col-active-cases">
+            
+            <div class="card shadow-sm border-0 rounded card-active-cases">
+                <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-2_ujssbj.jpg" alt="" class="w-100 card-img-top">
+                    <div class="p-4">
+                        <h6 class="mb-0">Mark Rockwell</h5>
+                        <p class="small text-muted">CEO - Consultant</p>
+                        <button type="button" class="btn btn-primary">View Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col-active-cases">
+        
+          <div class="card shadow-sm border-0 rounded card-active-cases">
+              <div class="card-body p-0"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570799922/profile-2_ujssbj.jpg" alt="" class="w-100 card-img-top">
+                  <div class="p-4">
+                      <h6 class="mb-0">Mark Rockwell</h5>
+                      <p class="small text-muted">CEO - Consultant</p>
+                      <button type="button" class="btn btn-primary">View Report</button>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+.navbar{
+    background-color: #106cfc;
+}
+.card{
+    width: 40%;
+    float: center;
+    margin-bottom: 3rem !important;
+    margin-left: 30%;
+    border-radius: 1rem;
+}
+.card-body{
+    margin-left: 1.5rem;
+}
+
+.col{
+    background-color: #106cfc;
+}
+
+p{
+    font-size: 1rem;
+    margin-top: 1.2rem;
+    margin-right: 1.2rem;
+    color: aliceblue;
+}
